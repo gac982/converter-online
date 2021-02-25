@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#232526">
+    <!-- css -->
+    <link href="assets/css/mobile.css" rel="stylesheet" media="all and (max-width: 600px)">
+    <link href="assets/css/desktop.css" rel="stylesheet" media="all and (min-width: 600px)">
+    <title>Converter Online</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo">Converter Online</h1>
+        <p>Keep It Simply, Stupid</p>
+        <a href="https://github.com/gac982/"><img class="imagen" src="assets/svg/github.svg" alt="logo github"></a>
+    </header>
+    <section class="main" id="app">
+        <div class="container">
+            <div class="group">
+                <h2 class="subtitulo">Pulgadas a Pixels</h2>
+                <hr>
+                <h3 class="subtitulo">Pulgadas (in):</h3>
+                <input class="numeros" v-model="pulgadas" type="number">
+                <h3 class="subtitulo">Pixel (px):</h3>
+                <span class="cuadro">{{ inPx() | anyadirPx }}</span>
+            </div>
+            <div class="group">
+                <h2 class="subtitulo">Pixels a Pulgadas</h2>
+                <hr>
+                <h3 class="subtitulo">Pixels (px):</h3>
+                <input class="numeros" v-model="pixelsPulgadas" type="number">
+                <h3 class="subtitulo">Pulgadas (in):</h3>
+                <span class="cuadro">{{ pxIn() | redondear | anyadirIn }}</span>
+            </div>
+            <div class="group">
+                <h2 class="subtitulo">Pixels a Rem</h2>
+                <hr>
+                <h3 class="subtitulo">Pixels (px):</h3>
+                <input class="numeros" v-model="pixelsRem" type="number">
+                <h3 class="subtitulo">Rem (rem):</h3>
+                <span class="cuadro">{{ pxRems() | anyadirRem }}</span>
+            </div>
+            <div class="group">
+                <h2 class="subtitulo">REM a Pixels</h2>
+                <hr>
+                <h3 class="subtitulo">REM (rem):</h3>
+                <input class="numeros" v-model="rem" type="number">
+                <h3 class="subtitulo">Pixel (px):</h3>
+                <span class="cuadro">{{ remPxs() | anyadirPx }}</span>
+            </div>
+            <div class="group">
+                <h2 class="subtitulo">Pixels a EM</h2>
+                <hr>
+                <h3 class="subtitulo">Pixels (px):</h3>
+                <input class="numeros" v-model="pixelsEm" type="number">
+                <h3 class="subtitulo">EM (em):</h3>
+                <span class="cuadro">{{ pxEms() | anyadirEm }}</span>
+            </div>
+            <div class="group">
+                <h2 class="subtitulo">EM a Pixels</h2>
+                <hr>
+                <h3 class="subtitulo">EM (em):</h3>
+                <input class="numeros" v-model="em" type="number">
+                <h3 class="subtitulo">Pixel (px):</h3>
+                <span class="cuadro">{{ emPxs() | anyadirPx }}</span>
+            </div>
+            <div class="group">
+                <h2 class="subtitulo">Pixels a Porcentaje</h2>
+                <hr>
+                <h3 class="subtitulo">Pixels (px):</h3>
+                <input class="numeros" v-model="pixelsPorcentaje" type="number">
+                <h3 class="subtitulo">Porcentaje (%):</h3>
+                <span class="cuadro">{{ pxPorcent() | anyadirPorciento }}</span>
+            </div>
+            <div class="group">
+                <h2 class="subtitulo">Porcentaje a Pixels</h2>
+                <hr>
+                <h3 class="subtitulo">Porcentaje (%):</h3>
+                <input class="numeros" v-model="porcentaje" type="number">
+                <h3 class="subtitulo">Pixel (px):</h3>
+                <span class="cuadro">{{ porcentPx() | anyadirPx }}</span>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="copy">Gustavo Cogollo | &#127279 2021</p>
+    </footer>
+
+
+
+
+    <!-- javascript -->
+    <script src="assets/js/vue.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
